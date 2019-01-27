@@ -1,0 +1,20 @@
+ルートID：simple-route
+    
+  1. データ取得
+  
+          id -> route-timer
+          uri -> timer://foo?period=1000
+            
+  2. メッセージボディに値を設定
+  
+          id -> route-setBody
+            
+        1. 定数
+            Hello World from camel-context.xml
+             
+        
+  3. ログ出力
+  
+          id -> route-log
+          message -> >>> ${body}
+          
