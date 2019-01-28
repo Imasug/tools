@@ -6,7 +6,7 @@ import java.util.ResourceBundle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import jp.imanaga.tools.data.XmlElement;
+import jp.imanaga.tools.data.CamelXmlElement;
 
 @Component
 public class CamelXmlProcessor {
@@ -14,7 +14,8 @@ public class CamelXmlProcessor {
 	@Autowired
 	private ResourceBundle resourceBundle;
 
-	public List<XmlElement> process(List<XmlElement> input) {
+	public List<CamelXmlElement> process(List<CamelXmlElement> input) {
+		// TODO 要検討
 		input.forEach(element -> {
 			String key = element.getName();
 			if (resourceBundle.containsKey(key)) {

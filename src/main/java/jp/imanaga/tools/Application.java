@@ -19,7 +19,8 @@ public class Application {
 
 		try (ConfigurableApplicationContext ctx = app.run(args);) {
 			// TODO Apache Commons CLI、Spring Shellを検討
-			ctx.getBean(CamelXmlService.class).generateDoc(args[0]);
+			// ctx.getBean(CamelXmlService.class).generateDoc(args[0]);
+			ctx.getBean(CamelXmlService.class).generateXls(args[0]);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

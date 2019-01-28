@@ -3,19 +3,21 @@ package jp.imanaga.tools.data;
 import java.util.List;
 import java.util.Map;
 
-public class XmlElement {
+public class CamelXmlElement {
 
 	private String name;
 
 	private Map<String, String> attrs;
 
-	private List<XmlElement> children;
+	private List<CamelXmlElement> children;
 
 	private String text;
 
 	private String description;
 
-	public XmlElement(String name, Map<String, String> attrs, List<XmlElement> children) {
+	private Map<String, String> endpoint;
+
+	public CamelXmlElement(String name, Map<String, String> attrs, List<CamelXmlElement> children) {
 		this.name = name;
 		this.attrs = attrs;
 		this.children = children;
@@ -37,11 +39,11 @@ public class XmlElement {
 		this.attrs = attrs;
 	}
 
-	public List<XmlElement> getChildren() {
+	public List<CamelXmlElement> getChildren() {
 		return children;
 	}
 
-	public void setChildren(List<XmlElement> children) {
+	public void setChildren(List<CamelXmlElement> children) {
 		this.children = children;
 	}
 
@@ -59,6 +61,14 @@ public class XmlElement {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public Map<String, String> getEndpoint() {
+		return endpoint;
+	}
+
+	public void setEndpoint(Map<String, String> endpoint) {
+		this.endpoint = endpoint;
 	}
 
 }

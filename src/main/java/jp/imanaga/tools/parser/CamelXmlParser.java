@@ -11,16 +11,16 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import jp.imanaga.tools.data.XmlElement;
+import jp.imanaga.tools.data.CamelXmlElement;
 
 @Component
 public class CamelXmlParser extends DefaultHandler {
 
-	private Stack<XmlElement> caches;
+	private Stack<CamelXmlElement> caches;
 
-	private List<XmlElement> routes;
+	private List<CamelXmlElement> routes;
 
-	public List<XmlElement> getRoutes() {
+	public List<CamelXmlElement> getRoutes() {
 		return routes;
 	}
 
@@ -40,7 +40,7 @@ public class CamelXmlParser extends DefaultHandler {
 		}
 
 		// コンポーネント情報作成
-		XmlElement component = new XmlElement(qName, attrs, new ArrayList<>());
+		CamelXmlElement component = new CamelXmlElement(qName, attrs, new ArrayList<>());
 
 		if ("route".equals(qName)) {
 			routes.add(component);
